@@ -334,27 +334,27 @@ local Compkiller = {
 	Logo = "rbxassetid://120245531583106",
 	Windows = {},
 	Scale = {
-		Window = UDim2.new(0, 456,0, 499),
-		Mobile = UDim2.new(0, 450,0, 375),
-		TabOpen = 185,
-		TabClose = 85,
+		Window = UDim2.new(0, 340,0, 420),
+		Mobile = UDim2.new(0, 320,0, 300),
+		TabOpen = 140,
+		TabClose = 60,
 	},
 	ArcylicParent = workspace.CurrentCamera
 };
 
 Compkiller.Colors = {
-    Highlight = Color3.fromRGB(0, 120, 215), -- Bright blue for highlights
-    Toggle = Color3.fromRGB(0, 153, 51),    -- Green for toggles
-    Risky = Color3.fromRGB(255, 85, 85),    -- Red for risky actions
-    BGDBColor = Color3.fromRGB(245, 245, 245), -- Light background for better contrast
-    BlockColor = Color3.fromRGB(230, 230, 230), -- Slightly darker block background
-    StrokeColor = Color3.fromRGB(60, 60, 60),   -- Darker stroke for separation
-    SwitchColor = Color3.fromRGB(0, 0, 0),      -- Black for text (high contrast)
-    DropColor = Color3.fromRGB(220, 220, 220),  -- Light dropdowns
-    MouseEnter = Color3.fromRGB(200, 200, 200), -- Mouse hover effect
-    BlockBackground = Color3.fromRGB(255, 255, 255), -- Pure white for main blocks
-    LineColor = Color3.fromRGB(180, 180, 180),  -- Subtle line color
-    HighStrokeColor = Color3.fromRGB(0, 0, 0),  -- Black for high-contrast strokes
+    Highlight = Color3.fromRGB(0, 140, 255), -- Blue accent
+    Toggle = Color3.fromRGB(0, 120, 255),    -- Blue for toggles
+    Risky = Color3.fromRGB(255, 80, 80),     -- Red for risky actions
+    BGDBColor = Color3.fromRGB(24, 26, 32),  -- Very dark background
+    BlockColor = Color3.fromRGB(32, 34, 40), -- Slightly lighter block background
+    StrokeColor = Color3.fromRGB(40, 42, 50),-- Subtle stroke
+    SwitchColor = Color3.fromRGB(230, 235, 245), -- Light text for contrast
+    DropColor = Color3.fromRGB(36, 38, 46),  -- Dropdowns
+    MouseEnter = Color3.fromRGB(44, 48, 60), -- Mouse hover effect
+    BlockBackground = Color3.fromRGB(28, 30, 36), -- Main block background
+    LineColor = Color3.fromRGB(50, 54, 64),  -- Subtle line color
+    HighStrokeColor = Color3.fromRGB(0, 140, 255), -- Blue for high-contrast strokes
 };
 
 Compkiller.Elements = {
@@ -1910,7 +1910,7 @@ function Compkiller:_AddLinkValue(Name , Default , GlobalBlock , LinkValues , re
 		BlockText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		BlockText.BorderSizePixel = 0
 		BlockText.Position = UDim2.new(0, 5, 0, 0)
-		BlockText.Size = UDim2.new(0, 250, 0, 15)
+		BlockText.Size = UDim2.new(0, 180, 0, 15)
 		BlockText.ZIndex = GlobalBlock.ZIndex + 26
 		BlockText.Font = Enum.Font.GothamMedium
 		BlockText.Text = " "
@@ -2202,7 +2202,7 @@ function Compkiller:_AddColorPickerPanel(Button: ImageButton , Callback: (Color:
 	ColorPickerWindow.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	ColorPickerWindow.BorderSizePixel = 0
 	ColorPickerWindow.Position = UDim2.new(123, 0, 123, 0)
-	ColorPickerWindow.Size = UDim2.new(0, 175, 0, 200)
+	ColorPickerWindow.Size = UDim2.new(0, 120, 0, 140)
 	ColorPickerWindow.ZIndex = BaseZ_Index
 	ColorPickerWindow.AnchorPoint = Vector2.new(0.5,0)
 	ColorPickerWindow.Active = true;
@@ -2229,7 +2229,7 @@ function Compkiller:_AddColorPickerPanel(Button: ImageButton , Callback: (Color:
 	ColorPickBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	ColorPickBox.BorderSizePixel = 0
 	ColorPickBox.Position = UDim2.new(0, 7, 0, 7)
-	ColorPickBox.Size = UDim2.new(0, 145, 0, 145)
+	ColorPickBox.Size = UDim2.new(0, 90, 0, 90)
 	ColorPickBox.ZIndex = BaseZ_Index + 1
 	ColorPickBox.Image = "http://www.roblox.com/asset/?id=112554223509763"
 
@@ -3065,7 +3065,7 @@ function Compkiller:_LoadOption(Value , TabSignal)
 				Compkiller:_Animation(ExtractElement , Tween , {
 					Position = MainPosition,
 					BackgroundTransparency = 0,
-					Size = UDim2.new(0, 225, 0, UIListLayout.AbsoluteContentSize.Y)
+					Size = UDim2.new(0, 140, 0, UIListLayout.AbsoluteContentSize.Y)
 				});
 
 				Compkiller:_Animation(UIStroke , Tween , {
@@ -3078,7 +3078,7 @@ function Compkiller:_LoadOption(Value , TabSignal)
 				Compkiller:_Animation(ExtractElement , Tween , {
 					Position = DropPosition,
 					BackgroundTransparency = 1,
-					Size = UDim2.new(0, 225, 0, UIListLayout.AbsoluteContentSize.Y - 10)
+					Size = UDim2.new(0, 140, 0, UIListLayout.AbsoluteContentSize.Y - 10)
 				});
 
 				Compkiller:_Animation(UIStroke , Tween , {
@@ -3100,7 +3100,7 @@ function Compkiller:_LoadOption(Value , TabSignal)
 		ExtractElement.BorderSizePixel = 0
 		ExtractElement.ClipsDescendants = true
 		ExtractElement.Position = UDim2.new(123, 0, 123, 0)
-		ExtractElement.Size = UDim2.new(0, 225, 0, 35)
+		ExtractElement.Size = UDim2.new(0, 140, 0, 30)
 		ExtractElement.ZIndex = BaseZ_Index
 		ExtractElement.Visible = false
 		ExtractElement.ClipsDescendants = true
@@ -3174,7 +3174,7 @@ function Compkiller:_LoadDropdown(BaseParent: TextButton , Callback: () -> any)
 	DropdownWindow.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	DropdownWindow.BorderSizePixel = 0
 	DropdownWindow.Position = UDim2.new(123, 0, 123, 0)
-	DropdownWindow.Size = UDim2.new(0, 190, 0, 200)
+	DropdownWindow.Size = UDim2.new(0, 110, 0, 120)
 	DropdownWindow.ZIndex = BaseZ_Index
 
 	table.insert(Compkiller.Elements.BlockBackground,{
@@ -3248,7 +3248,7 @@ function Compkiller:_LoadDropdown(BaseParent: TextButton , Callback: () -> any)
 			Compkiller:_Animation(DropdownWindow,TweenInfo.new(0.2),{
 				BackgroundTransparency = 0,
 				Position = MainPosition,
-				Size = UDim2.new(0, BaseParent.AbsoluteSize.X - 1, 0, math.clamp(UIListLayout.AbsoluteContentSize.Y + 10,10 , 200))
+				Size = UDim2.new(0, BaseParent.AbsoluteSize.X - 1, 0, math.clamp(UIListLayout.AbsoluteContentSize.Y + 10,10 , 120))
 			})
 
 			Compkiller:_Animation(UIStroke,TweenInfo.new(0.2),{
@@ -3258,7 +3258,7 @@ function Compkiller:_LoadDropdown(BaseParent: TextButton , Callback: () -> any)
 			Compkiller:_Animation(DropdownWindow,TweenInfo.new(0.2),{
 				BackgroundTransparency = 1,
 				Position = DropPosition,
-				Size = UDim2.new(0, BaseParent.AbsoluteSize.X - 1, 0, math.clamp(UIListLayout.AbsoluteContentSize.Y / 1.5, 10 , 200))
+				Size = UDim2.new(0, BaseParent.AbsoluteSize.X - 1, 0, math.clamp(UIListLayout.AbsoluteContentSize.Y / 1.5, 10 , 120))
 			})
 
 			Compkiller:_Animation(UIStroke,TweenInfo.new(0.2),{
@@ -5147,7 +5147,7 @@ function Compkiller.new(Config : Window)
 	MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	MainFrame.BorderSizePixel = 0
 	MainFrame.Position = UDim2.fromScale(0.5,0.5);
-	MainFrame.Size = Compkiller.Scale.Window
+	MainFrame.Size = Config.Scale
 	MainFrame.ZIndex = 4
 
 	MainFrame:GetPropertyChangedSignal('BackgroundTransparency'):Connect(function()
@@ -5216,7 +5216,7 @@ function Compkiller.new(Config : Window)
 	WindowLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	WindowLabel.BorderSizePixel = 0
 	WindowLabel.Position = UDim2.new(0, 60, 0, 17)
-	WindowLabel.Size = UDim2.new(0, 200, 0, 25)
+	WindowLabel.Size = UDim2.new(0, 120, 0, 20)
 	WindowLabel.Font = Enum.Font.GothamBold
 	WindowLabel.Text = Config.Name
 	WindowLabel.TextColor3 = Compkiller.Colors.SwitchColor
@@ -5299,7 +5299,7 @@ function Compkiller.new(Config : Window)
 	UserText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	UserText.BorderSizePixel = 0
 	UserText.Position = UDim2.new(0, 55, 0, 8)
-	UserText.Size = UDim2.new(0, 200, 0, 20)
+	UserText.Size = UDim2.new(0, 120, 0, 16)
 	UserText.ZIndex = 2
 	UserText.Font = Enum.Font.GothamMedium
 	UserText.Text = "Username"
@@ -5318,7 +5318,7 @@ function Compkiller.new(Config : Window)
 	ExpireText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	ExpireText.BorderSizePixel = 0
 	ExpireText.Position = UDim2.new(0, 55, 0, 25)
-	ExpireText.Size = UDim2.new(0, 200, 0, 20)
+	ExpireText.Size = UDim2.new(0, 120, 0, 16)
 	ExpireText.ZIndex = 2
 	ExpireText.Font = Enum.Font.GothamMedium
 	ExpireText.Text = "0/0/0"
@@ -5622,7 +5622,7 @@ function Compkiller.new(Config : Window)
 		TabNameLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		TabNameLabel.BorderSizePixel = 0
 		TabNameLabel.Position = UDim2.new(0, 43, 0.5, 0)
-		TabNameLabel.Size = UDim2.new(0, 200, 0, 25)
+		TabNameLabel.Size = UDim2.new(0, 120, 0, 18)
 		TabNameLabel.ZIndex = 3
 		TabNameLabel.Font = Enum.Font.GothamMedium
 		TabNameLabel.Text = TabConfig.Name;
@@ -6062,7 +6062,7 @@ function Compkiller.new(Config : Window)
 		TabNameLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		TabNameLabel.BorderSizePixel = 0
 		TabNameLabel.Position = UDim2.new(0, 43, 0.5, 0)
-		TabNameLabel.Size = UDim2.new(0, 200, 0, 25)
+		TabNameLabel.Size = UDim2.new(0, 120, 0, 18)
 		TabNameLabel.ZIndex = 3
 		TabNameLabel.Font = Enum.Font.GothamMedium
 		TabNameLabel.Text = Configuration.Name;
@@ -6168,7 +6168,7 @@ function Compkiller.new(Config : Window)
 		SectionText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		SectionText.BorderSizePixel = 0
 		SectionText.Position = UDim2.new(0, 12, 0.5, 0)
-		SectionText.Size = UDim2.new(0, 200, 0, 25)
+		SectionText.Size = UDim2.new(0, 120, 0, 18)
 		SectionText.ZIndex = 10
 		SectionText.Font = Enum.Font.GothamMedium
 		SectionText.Text = "Config List"
@@ -6258,7 +6258,7 @@ function Compkiller.new(Config : Window)
 		SectionText_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		SectionText_2.BorderSizePixel = 0
 		SectionText_2.Position = UDim2.new(0, 12, 0.5, 0)
-		SectionText_2.Size = UDim2.new(0, 200, 0, 25)
+		SectionText_2.Size = UDim2.new(0, 120, 0, 18)
 		SectionText_2.ZIndex = 10
 		SectionText_2.Font = Enum.Font.GothamMedium
 		SectionText_2.Text = "Add Config"
@@ -7322,7 +7322,7 @@ function Compkiller.new(Config : Window)
 			TabNameLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			TabNameLabel.BorderSizePixel = 0
 			TabNameLabel.Position = UDim2.new(0, 43, 0.5, 0)
-			TabNameLabel.Size = UDim2.new(0, 200, 0, 25)
+			TabNameLabel.Size = UDim2.new(0, 120, 0, 18)
 			TabNameLabel.ZIndex = 3
 			TabNameLabel.Font = Enum.Font.GothamMedium
 			TabNameLabel.Text = TabConfig.Name;
@@ -7718,7 +7718,7 @@ function Compkiller.new(Config : Window)
 			SectionText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			SectionText.BorderSizePixel = 0
 			SectionText.Position = UDim2.new(0, 12, 0.5, 0)
-			SectionText.Size = UDim2.new(0, 200, 0, 25)
+			SectionText.Size = UDim2.new(0, 120, 0, 18)
 			SectionText.ZIndex = 10
 			SectionText.Font = Enum.Font.GothamMedium
 			SectionText.Text = config.Name;
@@ -7767,7 +7767,7 @@ function Compkiller.new(Config : Window)
 					if Upvalue == true then
 						local Dist = math.abs(Parent:GetAttribute('LayoutStacks') - Section.AbsoluteSize.Y);
 						local Size = UDim2.new(1, 0, 0, (Parent:GetAttribute('LayoutStacks') or UIListLayout.AbsoluteContentSize.Y));
-			
+	
 						if Dist >= 99 then
 							Compkiller:_Animation(Section,TweenInfo.new(0.2,Enum.EasingStyle.Quad),{
 								Size = Size
@@ -8700,7 +8700,7 @@ function Compkiller.newNotify()
 			BlockFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			BlockFrame.BorderSizePixel = 0
 			BlockFrame.ClipsDescendants = false
-			BlockFrame.Size = UDim2.new(0, 200, 0, 0)
+			BlockFrame.Size = UDim2.new(0, 120, 0, 0)
 			BlockFrame.LayoutOrder = LayoutREF;
 
 			NotifyFrame.Name = "NotifyFrame"
