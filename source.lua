@@ -343,18 +343,18 @@ local Compkiller = {
 };
 
 Compkiller.Colors = {
-	Highlight = Color3.fromRGB(17, 238, 253),
-	Toggle = Color3.fromRGB(14, 203, 213),
-	Risky = Color3.fromRGB(251, 255, 39),
-	BGDBColor = Color3.fromRGB(22, 24, 29),
-	BlockColor = Color3.fromRGB(28, 29, 34),
-	StrokeColor = Color3.fromRGB(37, 38, 43),
-	SwitchColor = Color3.fromRGB(255, 255, 255),
-	DropColor = Color3.fromRGB(33, 35, 39),
-	MouseEnter = Color3.fromRGB(55, 58, 65),
-	BlockBackground = Color3.fromRGB(39, 40, 47),
-	LineColor = Color3.fromRGB(65, 65, 65),
-	HighStrokeColor = Color3.fromRGB(55, 56, 63),
+    Highlight = Color3.fromRGB(0, 174, 255), -- Vibrant blue for highlights
+    Toggle = Color3.fromRGB(0, 200, 83),    -- Bright green for toggles
+    Risky = Color3.fromRGB(255, 193, 7),    -- Yellow for risky actions
+    BGDBColor = Color3.fromRGB(18, 18, 20), -- Very dark background
+    BlockColor = Color3.fromRGB(28, 28, 30),-- Slightly lighter dark for blocks
+    StrokeColor = Color3.fromRGB(50, 50, 55),-- Subtle border
+    SwitchColor = Color3.fromRGB(255, 255, 255), -- White for text/icons
+    DropColor = Color3.fromRGB(36, 36, 40),  -- Button/dropdown background
+    MouseEnter = Color3.fromRGB(60, 60, 70), -- Button hover
+    BlockBackground = Color3.fromRGB(24, 24, 28), -- Block background
+    LineColor = Color3.fromRGB(80, 80, 80),  -- Divider lines
+    HighStrokeColor = Color3.fromRGB(90, 90, 100), -- Accent border
 };
 
 Compkiller.Elements = {
@@ -6007,44 +6007,6 @@ function Compkiller.new(Config : Window)
 		return TabArgs;
 	end;
 
-	function WindowArgs:AddUnbind(UilistLayout: UIListLayout , Scrolling)
-
-		UIListLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
-			Scrolling.ScrollingEnabled = true
-			UilistLayout.VerticalFlex = Enum.UIFlexAlignment.None;
-			Scrolling.CanvasSize = UDim2.fromOffset(0,UilistLayout.AbsoluteContentSize.Y + 5)
-		end)
-
-		--[[local Parent: ScrollingFrame = UilistLayout.Parent;
-
-		Parent = Parent or Scrolling;
-
-		local Detection = function()
-			local Target = (UilistLayout.AbsoluteContentSize.Y);
-
-			for i,v in next , Parent:GetChildren() do task.wait(0.1)
-				local UIList = v:FindFirstChildWhichIsA('UIListLayout');
-				if v:IsA('Frame') and UIList then
-					if (UIList.AbsoluteContentSize.Y >= Target) or (v.AbsoluteSize.Y >= Target) or (UilistLayout.AbsoluteContentSize.Y > Parent.AbsoluteSize.Y) then
-						UilistLayout.VerticalFlex = Enum.UIFlexAlignment.None;
-						Parent.ScrollingEnabled = true;
-					else
-						Parent.ScrollingEnabled = false;
-						UilistLayout.VerticalFlex = Enum.UIFlexAlignment.None;
-					end;
-				end
-			end;
-		end;
-
-		local Executable = function()
-			while true do task.wait(0.15);
-				pcall(Detection);
-			end;
-		end;
-
-		table.insert(WindowArgs.THREADS,task.spawn(Executable))]]
-	end;
-
 	function WindowArgs:DrawConfig(Configuration : TabConfigManager , Internal)
 		Configuration = Compkiller.__CONFIG(Configuration,{
 			Name = "Config",
@@ -7378,10 +7340,6 @@ function Compkiller.new(Config : Window)
 				Property = 'TextColor3'
 			});
 
-			Highlight.Name = "Highlight"
-			Highlight.Parent = TabButton
-			Highlight.AnchorPoint = Vector2.new(0.5, 0.5)
-			Highlight.BackgroundColor3 = Color3.fromRGB(161, 161, 161)
 			Highlight.BackgroundTransparency = 0.925
 			Highlight.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			Highlight.BorderSizePixel = 0
