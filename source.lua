@@ -343,18 +343,18 @@ local Compkiller = {
 };
 
 Compkiller.Colors = {
-    Highlight = Color3.fromRGB(0, 174, 255), -- Vibrant blue for highlights
-    Toggle = Color3.fromRGB(0, 200, 83),    -- Bright green for toggles
-    Risky = Color3.fromRGB(255, 193, 7),    -- Yellow for risky actions
-    BGDBColor = Color3.fromRGB(18, 18, 20), -- Very dark background
-    BlockColor = Color3.fromRGB(28, 28, 30),-- Slightly lighter dark for blocks
-    StrokeColor = Color3.fromRGB(50, 50, 55),-- Subtle border
-    SwitchColor = Color3.fromRGB(255, 255, 255), -- White for text/icons
-    DropColor = Color3.fromRGB(36, 36, 40),  -- Button/dropdown background
-    MouseEnter = Color3.fromRGB(60, 60, 70), -- Button hover
-    BlockBackground = Color3.fromRGB(24, 24, 28), -- Block background
-    LineColor = Color3.fromRGB(80, 80, 80),  -- Divider lines
-    HighStrokeColor = Color3.fromRGB(90, 90, 100), -- Accent border
+    Highlight = Color3.fromRGB(0, 120, 215), -- Bright blue for highlights
+    Toggle = Color3.fromRGB(0, 153, 51),    -- Green for toggles
+    Risky = Color3.fromRGB(255, 85, 85),    -- Red for risky actions
+    BGDBColor = Color3.fromRGB(245, 245, 245), -- Light background for better contrast
+    BlockColor = Color3.fromRGB(230, 230, 230), -- Slightly darker block background
+    StrokeColor = Color3.fromRGB(60, 60, 60),   -- Darker stroke for separation
+    SwitchColor = Color3.fromRGB(0, 0, 0),      -- Black for text (high contrast)
+    DropColor = Color3.fromRGB(220, 220, 220),  -- Light dropdowns
+    MouseEnter = Color3.fromRGB(200, 200, 200), -- Mouse hover effect
+    BlockBackground = Color3.fromRGB(255, 255, 255), -- Pure white for main blocks
+    LineColor = Color3.fromRGB(180, 180, 180),  -- Subtle line color
+    HighStrokeColor = Color3.fromRGB(0, 0, 0),  -- Black for high-contrast strokes
 };
 
 Compkiller.Elements = {
@@ -7205,7 +7205,6 @@ function Compkiller.new(Config : Window)
 			Left.BottomImage = ""
 			Left.ScrollBarThickness = 0
 			Left.TopImage = ""
-			--Left.AutomaticCanvasSize = Enum.AutomaticSize.Y;
 			Left.CanvasSize = UDim2.new(0, 0, 0, 0)
 			
 			UIListLayout:GetPropertyChangedSignal('AbsoluteContentSize'):Connect(function()
@@ -7231,7 +7230,6 @@ function Compkiller.new(Config : Window)
 			Right.ZIndex = 8
 			Right.ScrollingEnabled = false
 			Right.BottomImage = ""
-			--Right.AutomaticCanvasSize = Enum.AutomaticSize.Y;
 			Right.CanvasSize = UDim2.new(0, 0, 0, 0)
 			Right.ScrollBarThickness = 0
 			Right.TopImage = ""
@@ -7250,9 +7248,6 @@ function Compkiller.new(Config : Window)
 			UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
 			UIListLayout_2.Padding = UDim.new(0, BASE_PADDING)
 			UIListLayout_2.VerticalFlex = Enum.UIFlexAlignment.None
-
-			WindowArgs:AddUnbind(UIListLayout_2 , Right);
-			WindowArgs:AddUnbind(UIListLayout , Left);
 
 			if TabConfig.Type == "Single" then
 				Right.Visible = false;
@@ -7381,7 +7376,6 @@ function Compkiller.new(Config : Window)
 			Left.BottomImage = ""
 			Left.ScrollBarThickness = 0
 			Left.TopImage = ""
-			--Left.AutomaticCanvasSize = Enum.AutomaticSize.Y;
 			Left.CanvasSize = UDim2.new(0, 0, 0, 0)
 			
 			
@@ -7410,7 +7404,6 @@ function Compkiller.new(Config : Window)
 			Right.BottomImage = ""
 			Right.ScrollBarThickness = 0
 			Right.TopImage = ""
-			--Right.AutomaticCanvasSize = Enum.AutomaticSize.Y;
 			Right.CanvasSize = UDim2.new(0, 0, 0, 0)
 
 			Upvalue.Left = Left;
@@ -7427,14 +7420,6 @@ function Compkiller.new(Config : Window)
 			UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
 			UIListLayout_2.Padding = UDim.new(0, BASE_PADDING)
 			UIListLayout_2.VerticalFlex = Enum.UIFlexAlignment.None
-
-			WindowArgs:AddUnbind(UIListLayout_2 , Right);
-			WindowArgs:AddUnbind(UIListLayout , Left);
-
-			if Compkiller:_IsMobile() then
-				Compkiller:_AddDragBlacklist(Left);
-				Compkiller:_AddDragBlacklist(Right);
-			end;
 
 			if TabConfig.Type == "Single" then
 				Right.Visible = false;
